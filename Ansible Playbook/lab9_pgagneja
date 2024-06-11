@@ -1,0 +1,36 @@
+PLAY [myvmlab] *************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *****************************************************************************************************************************************************
+ok: [myvmlab]
+
+TASK [update apache] *******************************************************************************************************************************************************
+ok: [myvmlab]
+
+TASK [install epel] ********************************************************************************************************************************************************
+ok: [myvmlab]
+
+TASK [remove package] ******************************************************************************************************************************************************
+ok: [myvmlab]
+
+TASK [set hostname] ********************************************************************************************************************************************************
+ok: [myvmlab]
+
+TASK [to create wheel group if not exist to provide sudo access] ***********************************************************************************************************
+ok: [myvmlab]
+
+TASK [dirctory structure] **************************************************************************************************************************************************
+changed: [myvmlab] => (item=lab1)
+changed: [myvmlab] => (item=lab2)
+changed: [myvmlab] => (item=lab3)
+changed: [myvmlab] => (item=lab4)
+changed: [myvmlab] => (item=lab5)
+changed: [myvmlab] => (item=lab6)
+changed: [myvmlab] => (item=lab7)
+changed: [myvmlab] => (item=lab8)
+changed: [myvmlab] => (item=lab9)
+
+TASK [create user with sudo access] ****************************************************************************************************************************************
+fatal: [myvmlab]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (user) module: generate_key_ssh Supported parameters include: append, authorization, comment, create_home, expires, force, generate_ssh_key, group, groups, hidden, home, local, login_class, move_home, name, non_unique, password, password_lock, profile, remove, role, seuser, shell, skeleton, ssh_key_bits, ssh_key_comment, ssh_key_file, ssh_key_passphrase, ssh_key_type, state, system, uid, update_password"}
+
+PLAY RECAP *****************************************************************************************************************************************************************
+myvmlab                    : ok=7    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0

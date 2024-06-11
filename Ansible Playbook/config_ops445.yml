@@ -1,0 +1,51 @@
+---
+- hosts: myvmlab
+  user: student
+  become: yes
+  tasks:
+    - name: update apache
+      yum:
+        name: httpd
+        state: latest
+
+    - name: install epel
+      yum:
+        name: epel-release
+        state: present
+
+    - name: remove package
+      package:
+        name: tree
+        state: absent
+
+    - name: set hostname
+      hostname:
+        name: pgagneja
+
+    - name: to create wheel group if not exist to provide sudo access
+      group:
+        name: wheel
+        state: present
+
+    - name: dirctory structure
+      file:
+        name: "{{ item }}"
+        path: /home/pgagneja/ops445
+        state: directory
+      loop:
+        - lab1
+        - lab2
+        - lab3
+        - lab4
+        - lab5
+        - lab6
+        - lab7
+        - lab8
+        - lab9
+
+    - name: create user with sudo access
+      user:
+        name: pgagneja
+        groups: wheel
+        generate_key_ssh: yes
+        ssh_key_file: ~pgagneja/.ssh/id_rsa
