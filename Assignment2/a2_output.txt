@@ -1,0 +1,16 @@
+test_argparse_help (__main__.TestArgs)
+duim.py -h returns the required options ... FAIL
+
+======================================================================
+FAIL: test_argparse_help (__main__.TestArgs)
+duim.py -h returns the required options
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pgagneja/ops445/a2/./CheckA2.py", line 19, in test_argparse_help
+    self.assertIn(string, stdout.decode('utf-8'), msg=error_output)
+AssertionError: '[-h]' not found in '' : Output of `duim.py -h` doesn't match what's expected. Make sure you've added an option!)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.023s
+
+FAILED (failures=1)
